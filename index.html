@@ -4,126 +4,199 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wenting Jin | LEED AP BD+C | Portfolio</title>
-  <meta name="description" content="Wenting Jin — Architectural Designer with a sustainability focus (LEED AP BD+C). Selected academic and professional works." />
+  <meta name="description" content="Wenting Jin — Architectural Designer with a sustainability focus (LEED AP BD+C). Academic and professional works." />
 
-  <!-- Fonts (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0e11;
-      --panel:#0f141a;
-      --text:#e8eef6;
-      --muted:#a7b0ba;
-      --line:#1c2430;
-      --accent:#3ee08f;
-      --max:1120px;
-      --r:18px;
+      --bg:#ffffff;
+      --panel:#f6f7f9;
+      --text:#111318;
+      --muted:#5a6472;
+      --line:#e6e8ee;
+      --accent:#1c7c54; /* subtle sustainability green */
+      --max:1100px;
+      --r:16px;
+      --shadow: 0 10px 30px rgba(17,19,24,0.06);
     }
     *{box-sizing:border-box}
     body{
-      margin:0; background:var(--bg); color:var(--text);
+      margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
       line-height:1.55;
     }
     a{color:inherit; text-decoration:none}
     a:hover{color:var(--accent)}
-    .wrap{max-width:var(--max); margin:0 auto; padding:36px 22px 70px}
-    @media (min-width: 900px){ .wrap{padding:52px 48px 90px} }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    @media (min-width: 900px){ .wrap{padding:44px 34px 90px} }
 
-    /* Header */
+    /* Top bar */
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0 26px; border-bottom:1px solid var(--line);
-      position:sticky; top:0; background:linear-gradient(to bottom, rgba(11,14,17,.98), rgba(11,14,17,.88));
+      gap:18px;
+      padding:12px 0 18px;
+      border-bottom:1px solid var(--line);
+      position:sticky; top:0;
+      background:rgba(255,255,255,0.92);
       backdrop-filter: blur(10px);
       z-index:5;
     }
-    .brand{
-      display:flex; flex-direction:column; gap:4px;
+    .brand{display:flex; flex-direction:column; gap:3px}
+    .brand .name{font-weight:700; letter-spacing:0.2px}
+    .brand .role{font-size:13px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    nav a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:999px;
+      border:1px solid transparent;
     }
-    .brand .name{font-family:"Space Grotesk"; font-weight:700; letter-spacing:.3px}
-    .brand .title{color:var(--muted); font-size:14px}
-    nav{display:flex; gap:14px; font-size:14px; color:var(--muted)}
-    nav a{padding:8px 10px; border-radius:10px}
-    nav a:hover{background:rgba(62,224,143,.08); color:var(--text)}
+    nav a:hover{
+      border-color:var(--line);
+      background:var(--panel);
+      color:var(--text);
+    }
 
     /* Hero */
-    .hero{
-      display:grid; gap:18px; padding:34px 0 26px;
+    .hero{padding:34px 0 26px}
+    .hero-grid{
+      display:grid; gap:18px;
+      grid-template-columns:1fr;
+      align-items:start;
     }
-    @media (min-width: 900px){
-      .hero{grid-template-columns: 1.2fr .8fr; align-items:end; padding:44px 0 30px}
+    @media (min-width: 980px){
+      .hero-grid{grid-template-columns: 1.35fr .65fr; gap:28px}
     }
     h1{
       margin:0;
-      font-family:"Space Grotesk";
-      font-size:44px; line-height:1.05; letter-spacing:.2px;
+      font-size:44px; line-height:1.05;
+      letter-spacing:-0.6px;
     }
-    @media (min-width: 900px){ h1{font-size:56px} }
-    .lead{color:var(--muted); font-size:16px; margin-top:14px; max-width:60ch}
-    .cta{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:12px;
-      border:1px solid var(--line); background:transparent;
-      color:var(--text); font-size:14px;
+    @media (min-width: 980px){ h1{font-size:54px} }
+    .subtitle{
+      margin-top:12px;
+      color:var(--muted);
+      max-width:70ch;
+      font-size:16px;
     }
-    .btn.primary{background:rgba(62,224,143,.12); border-color:rgba(62,224,143,.35)}
-    .kpi{
-      background:var(--panel); border:1px solid var(--line);
-      border-radius:var(--r); padding:16px;
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .pill{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      background:#fff;
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    .pill strong{color:var(--text); font-weight:600}
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .mini{
+      padding:16px;
       display:grid; gap:10px;
     }
-    .kpi .row{display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-size:14px}
-    .kpi b{color:var(--text); font-weight:600}
+    .mini .row{
+      display:flex; justify-content:space-between; gap:12px;
+      color:var(--muted); font-size:13px;
+      border-bottom:1px dashed var(--line);
+      padding-bottom:8px;
+    }
+    .mini .row:last-child{border-bottom:none; padding-bottom:0}
+    .mini b{color:var(--text); font-weight:600}
+
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:18px
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      font-size:13px;
+      color:var(--text);
+      background:#fff;
+    }
+    .btn.primary{
+      border-color:rgba(28,124,84,0.35);
+      background:rgba(28,124,84,0.10);
+    }
 
     /* Sections */
     .section{padding:26px 0}
     .section h2{
-      margin:0 0 14px;
-      font-family:"Space Grotesk"; font-size:20px; letter-spacing:.2px;
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-0.2px;
     }
+    .section .hint{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:14px;
+      max-width:80ch;
+    }
+
     .grid{
       display:grid; gap:14px;
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
     }
-    @media (min-width: 720px){ .grid{grid-template-columns: repeat(2, 1fr)} }
-    @media (min-width: 1100px){ .grid{grid-template-columns: repeat(3, 1fr)} }
+    @media (min-width: 740px){ .grid{grid-template-columns: repeat(2, 1fr)} }
+    @media (min-width: 1080px){ .grid{grid-template-columns: repeat(3, 1fr)} }
 
-    .card{
-      background:var(--panel); border:1px solid var(--line);
-      border-radius:var(--r); overflow:hidden;
-      transition: transform .12s ease, border-color .12s ease;
+    .proj{
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      overflow:hidden;
+      background:#fff;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
     }
-    .card:hover{transform: translateY(-2px); border-color:rgba(62,224,143,.35)}
+    .proj:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(17,19,24,0.10);
+      border-color: rgba(28,124,84,0.25);
+    }
+
     .thumb{
       aspect-ratio: 4/3;
-      background:linear-gradient(135deg, rgba(62,224,143,.12), rgba(255,255,255,.06));
-      display:flex; align-items:center; justify-content:center;
-      color:rgba(232,238,246,.65);
-      font-size:13px;
+      background: var(--panel);
+      display:block;
+      width:100%;
+      object-fit:cover;
     }
-    .meta{padding:14px}
-    .meta .t{font-weight:700; margin:0 0 6px}
-    .meta .s{color:var(--muted); font-size:14px; margin:0 0 10px}
-    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .pbody{padding:14px}
+    .ptitle{margin:0 0 6px; font-weight:700; font-size:15px}
+    .pdesc{margin:0 0 10px; color:var(--muted); font-size:13px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
     .tag{
       font-size:12px; color:var(--muted);
       border:1px solid var(--line);
+      background:#fff;
       padding:4px 8px; border-radius:999px;
     }
 
     /* Footer */
     footer{
-      margin-top:36px; padding-top:18px;
+      margin-top:36px;
+      padding-top:18px;
       border-top:1px solid var(--line);
-      color:var(--muted); font-size:13px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .sep{opacity:.6}
+
+    /* Small utility */
+    .accent{color:var(--accent); font-weight:600}
   </style>
 </head>
 
@@ -132,106 +205,173 @@
     <header class="topbar">
       <div class="brand">
         <div class="name">Wenting Jin</div>
-        <div class="title">LEED AP BD+C • Architectural Designer • Sustainable Design Focus</div>
+        <div class="role">Architectural Designer • <span class="accent">LEED AP BD+C</span> • Sustainable Design Focus</div>
       </div>
       <nav>
         <a href="#projects">Projects</a>
+        <a href="#academic">Academic</a>
+        <a href="#professional">Professional</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div>
-        <h1>Designing with performance, clarity, and buildable detail.</h1>
-        <p class="lead">
-          Architectural Designer with a sustainability focus (LEED AP BD+C). Strong in Revit-based documentation,
-          interdisciplinary coordination, and translating design intent into fabrication-ready drawings.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Selected Projects</a>
-          <a class="btn" href="mailto:wednesdaykim88@gmail.com">Email</a>
-          <a class="btn" href="#" aria-label="Resume PDF">Download Resume (PDF)</a>
-        </div>
-      </div>
+      <div class="hero-grid">
+        <div>
+          <h1>Simple, buildable design with performance in mind.</h1>
+          <p class="subtitle">
+            I’m Wenting Jin, an Architectural Designer with a sustainability focus (LEED AP BD+C).
+            I work across Revit-based documentation, coordination, and performance-informed design thinking.
+          </p>
 
-      <div class="kpi" aria-label="quick facts">
-        <div class="row"><span>Certification</span><b>LEED AP BD+C</b></div>
-        <div class="row"><span>Focus</span><b>Sustainability + Documentation</b></div>
-        <div class="row"><span>Tools</span><b>Revit • Rhino • Adobe Suite</b></div>
-        <div class="row"><span>Experience</span><b>12,000+ hrs (pro)</b></div>
+          <div class="pillrow">
+            <div class="pill"><strong>Focus:</strong> Sustainability + Documentation</div>
+            <div class="pill"><strong>Tools:</strong> Revit • Rhino • Adobe</div>
+            <div class="pill"><strong>Experience:</strong> 12,000+ hrs (pro)</div>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="mailto:wednesdaykim88@gmail.com">Email</a>
+            <!-- Replace resume.pdf with your file path if you upload it -->
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+          </div>
+        </div>
+
+        <aside class="card mini" aria-label="Quick facts">
+          <div class="row"><span>Certification</span><b>LEED AP BD+C</b></div>
+          <div class="row"><span>Current</span><b>hb+a Architects (LA Metro)</b></div>
+          <div class="row"><span>Strengths</span><b>Revit Families • ADA • CDs</b></div>
+          <div class="row"><span>Location</span><b>San Francisco Bay Area</b></div>
+        </aside>
       </div>
     </section>
 
     <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <div class="grid">
-        <!-- Card 1 -->
-        <a class="card" href="#project-la-metro">
-          <div class="thumb">Replace with project image</div>
-          <div class="meta">
-            <p class="t">LA Metro Signage Program</p>
-            <p class="s">hb+a Architects • Signage / Revit Coordination</p>
-            <div class="tags">
-              <span class="tag">Transit</span>
-              <span class="tag">ADA</span>
-              <span class="tag">Revit Families</span>
-            </div>
-          </div>
-        </a>
+      <h2>Projects</h2>
+      <p class="hint">Selected works grouped into <span class="accent">Academic</span> and <span class="accent">Professional</span>. Click a project later if you want to add dedicated detail pages.</p>
+    </section>
 
-        <!-- Card 2 -->
-        <a class="card" href="#project-fish-market">
-          <div class="thumb">Replace with project image</div>
-          <div class="meta">
-            <p class="t">Fish Market • Fisherman’s Wharf</p>
-            <p class="s">Academic • Sustainable strategies + coastal materiality</p>
+    <!-- Academic -->
+    <section id="academic" class="section">
+      <h2>Academic Projects</h2>
+      <p class="hint">Studio and research projects emphasizing sustainable strategies, envelope + daylighting, and clear architectural narratives.</p>
+
+      <div class="grid">
+        <!-- 1 -->
+        <article class="proj">
+          <img class="thumb" src="images/academic_fishmarket.jpg" alt="Fish Market project cover" />
+          <div class="pbody">
+            <p class="ptitle">Fish Market • Fisherman’s Wharf</p>
+            <p class="pdesc">Coastal market concept integrating green roof, daylighting gaps, and rainwater reuse strategies.</p>
             <div class="tags">
               <span class="tag">Green Roof</span>
               <span class="tag">Daylighting</span>
               <span class="tag">Water Reuse</span>
             </div>
           </div>
-        </a>
+        </article>
 
-        <!-- Card 3 -->
-        <a class="card" href="#project-huizhou">
-          <div class="thumb">Replace with project image</div>
-          <div class="meta">
-            <p class="t">Huizhou Vernacular Adaptation Study</p>
-            <p class="s">Research • Preservation + contemporary performance</p>
+        <!-- 2 -->
+        <article class="proj">
+          <img class="thumb" src="images/academic_huizhou.jpg" alt="Huizhou research cover" />
+          <div class="pbody">
+            <p class="ptitle">Huizhou Vernacular Adaptation Study</p>
+            <p class="pdesc">Preservation + contemporary performance: climate response, material logic, and cultural continuity.</p>
             <div class="tags">
               <span class="tag">Heritage</span>
               <span class="tag">Climate Response</span>
               <span class="tag">Systems</span>
             </div>
           </div>
-        </a>
+        </article>
+
+        <!-- 3 -->
+        <article class="proj">
+          <img class="thumb" src="images/academic_studio3.jpg" alt="Studio project cover" />
+          <div class="pbody">
+            <p class="ptitle">Museum / Community Center Studio</p>
+            <p class="pdesc">Program + massing development with emphasis on passive strategies and buildable detailing.</p>
+            <div class="tags">
+              <span class="tag">Program</span>
+              <span class="tag">Massing</span>
+              <span class="tag">Detailing</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Professional -->
+    <section id="professional" class="section">
+      <h2>Professional Projects</h2>
+      <p class="hint">Built-work documentation and large-team coordination. Focus on clear deliverables, compliance, and constructability.</p>
+
+      <div class="grid">
+        <!-- 1 -->
+        <article class="proj">
+          <img class="thumb" src="images/pro_la_metro.jpg" alt="LA Metro signage cover" />
+          <div class="pbody">
+            <p class="ptitle">LA Metro Signage Program</p>
+            <p class="pdesc">Signage CDs for 11 stations + 7 buildings: schedules, details, Revit families, consultant coordination.</p>
+            <div class="tags">
+              <span class="tag">Transit</span>
+              <span class="tag">ADA</span>
+              <span class="tag">Revit</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="proj">
+          <img class="thumb" src="images/pro_resettlement.jpg" alt="Resettlement housing cover" />
+          <div class="pbody">
+            <p class="ptitle">Resettlement Housing • Nanchang</p>
+            <p class="pdesc">Site planning + construction drawings; iterative client revisions and documentation delivery.</p>
+            <div class="tags">
+              <span class="tag">Housing</span>
+              <span class="tag">CDs</span>
+              <span class="tag">Coordination</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="proj">
+          <img class="thumb" src="images/pro_industrial_park.jpg" alt="Industrial park cover" />
+          <div class="pbody">
+            <p class="ptitle">Industrial Park • Guangchang</p>
+            <p class="pdesc">Site plan, 3D models, and client presentation materials during design development.</p>
+            <div class="tags">
+              <span class="tag">Industrial</span>
+              <span class="tag">Site</span>
+              <span class="tag">Visualization</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="about" class="section">
       <h2>About</h2>
-      <p class="lead" style="max-width:75ch">
-        I’m Wenting Jin, a Master of Architecture student at Academy of Art University and a LEED AP BD+C.
-        I’ve worked across large-scale professional project delivery and U.S. transit documentation workflows.
-        I’m seeking roles in sustainable design, documentation, and performance-informed architectural design.
+      <p class="hint" style="max-width:85ch">
+        Master of Architecture candidate at Academy of Art University. LEED AP BD+C. Experienced in high-volume professional delivery
+        environments and U.S. transit documentation workflows. Seeking roles in sustainable design and performance-informed architectural work.
       </p>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p class="lead">
+      <p class="hint">
         Email: <a href="mailto:wednesdaykim88@gmail.com">wednesdaykim88@gmail.com</a><br/>
-        LinkedIn: <a href="#">linkedin.com/in/wenting-jin</a>
+        LinkedIn: <a href="https://www.linkedin.com/in/wenting-jin-753bba28b" target="_blank" rel="noopener">linkedin.com/in/wenting-jin</a>
       </p>
     </section>
 
     <footer>
       <div>© <span id="y"></span> Wenting Jin</div>
-      <div>
-        <span class="sep">Built for</span> Sustainable Design • Architectural Portfolio
-      </div>
+      <div>Light, minimal portfolio • Academic + Professional</div>
     </footer>
   </div>
 
